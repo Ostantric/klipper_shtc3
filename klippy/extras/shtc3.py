@@ -109,8 +109,8 @@ class SHTC3:
         data = []
         recv = self.i2c.i2c_read(data, 6)
         return bytearray(recv['response'])
-
-
+    def get_report_time_delta(self):
+        return REPORT_TIME
     def sleep(self, sleep_enabled):
         if sleep_enabled:
             self.sleep_send()
